@@ -12,10 +12,13 @@ import AboutAbs from '../images/about-abs.png'
 import KachiKeri from '../images/kachi-keri.png'
 import IceSandwich from '../images/ice-cream-sandwich.png'
 import Mango from '../images/mango.png'
-import PanKulfi from '../images/panKulfi.png'
 import ConeIco from '../images/coneIco.png'
+import CandyIco from '../images/candyIco.png'
+import CupIco from '../images/cupIco.png'
+import CandyCombo from '../images/candyCombo.png'
+import CupCombo from '../images/cupCombo.png'
+import ConeCombo from '../images/coneCombo.png'
 import RightArrow from '../images/rightArrow.png'
-import Cup2 from '../images/cup2.png'
 
 const LandingPage: React.FC = () => {
 
@@ -33,8 +36,8 @@ const LandingPage: React.FC = () => {
 
     const AboutImg = [
         { src: KachiKeri, alt: "Kachi Keri", delay: "delay-100" },
-        { src: IceSandwich, alt: "Ice Sandwich", delay: "delay-300" },
-        { src: Mango, alt: "Mango", delay: "delay-500" },
+        { src: IceSandwich, alt: "Ice Sandwich", delay: "delay-100" },
+        { src: Mango, alt: "Mango", delay: "delay-100" },
     ];
 
     return (
@@ -47,8 +50,24 @@ const LandingPage: React.FC = () => {
                 className='bg-cover bg-center'
             >
                 <div className="px-3 md:px-40 py-10 md:py-16">
-                    <div className='relative grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center'>
-                        <div>
+                    <div className='relative grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center md:flex-row'>
+                        <div className='h-[300px] md:h-[400px] mb-10 md:mb-0 md:order-2'>
+                            <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
+                                {images.map((image, index) => (
+                                    <img
+                                        key={index}
+                                        draggable={false}
+                                        src={image}
+                                        alt={`Slide ${index + 1}`}
+                                        className={`absolute select-none w-full h-full object-contain transition-all duration-1000 ease-in-out ${currentIndex === index
+                                            ? 'opacity-100 scale-100'
+                                            : 'opacity-0 scale-75'
+                                            }`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                        <div className='md:order-1'>
                             <div className='relative'>
                                 <h1 className='text-5xl md:text-[70px] leading-[50px] md:leading-[80px] font-bold'>Grab The Best<br />Ice Cream</h1>
                                 <img
@@ -65,22 +84,6 @@ const LandingPage: React.FC = () => {
                             >
                                 Explore Flavors
                             </a>
-                        </div>
-                        <div className='h-[300px] md:h-[400px] mt-10 md:mt-0'>
-                            <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
-                                {images.map((image, index) => (
-                                    <img
-                                        key={index}
-                                        draggable={false}
-                                        src={image}
-                                        alt={`Slide ${index + 1}`}
-                                        className={`absolute select-none w-full h-full object-contain transition-all duration-1000 ease-in-out ${currentIndex === index
-                                            ? 'opacity-100 scale-100'
-                                            : 'opacity-0 scale-75'
-                                            }`}
-                                    />
-                                ))}
-                            </div>
                         </div>
                         <div className='absolute -bottom-20 md:-bottom-28 right-0'>
                             <img className='w-[150px] md:w-[200px]' src={FloatIceCream2} draggable={false} />
@@ -137,18 +140,20 @@ const LandingPage: React.FC = () => {
                 <div className="px-3 md:px-40">
                     <div className='relative py-10 md:py-16'>
                         <h1 className='mb-32 text-center text-3xl md:text-5xl font-bold' style={{ textShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)' }}>Our Product Categories</h1>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-36 md:gap-10'>
                             <div className='bg-[#DAEEFF] rounded-lg group'>
                                 <div className='w-full h-[200px] -mt-[100px] grid grid-cols-1 gap-5'>
                                     <img
-                                        src={PanKulfi}
+                                        src={ConeCombo}
                                         className='w-full h-[200px] object-contain transition-all duration-500 ease-in-out group-hover:scale-75'
                                     />
                                 </div>
                                 <div className='px-10 pb-10 pt-5'>
                                     <h1 className='text-3xl font-bold text-center'>Cones</h1>
                                     <div className='flex items-center justify-center mb-5'>
-                                        <img src={ConeIco} className='w-[40px]' />
+                                        <div className='w-[40px] h-[60px]'>
+                                            <img src={ConeIco} className='w-full h-full object-contain' />
+                                        </div>
                                     </div>
                                     <p className='mb-5 text-center'>"Crispy, crunchy, and packed with flavor, our ice cream cones are the perfect treat."</p>
                                     <div className='flex items-center justify-center mt-5'>
@@ -167,16 +172,46 @@ const LandingPage: React.FC = () => {
                             <div className='bg-[#DAEEFF] rounded-lg group'>
                                 <div className='w-full h-[200px] -mt-[100px] grid grid-cols-1 gap-5'>
                                     <img
-                                        src={Cup2}
+                                        src={CupCombo}
                                         className='w-full h-[200px] object-contain transition-all duration-500 ease-in-out group-hover:scale-75'
                                     />
                                 </div>
                                 <div className='px-10 pb-10 pt-5'>
                                     <h1 className='text-3xl font-bold text-center'>Ice Cream Cups</h1>
                                     <div className='flex items-center justify-center mb-5'>
-                                        <img src={ConeIco} className='w-[40px]' />
+                                        <div className='w-[40px] h-[60px]'>
+                                            <img src={CupIco} className='w-full h-full object-contain' />
+                                        </div>
                                     </div>
                                     <p className='mb-5 text-center'>"Rich, creamy, and oh-so-delicious, our ice cream cups are a smooth indulgence."</p>
+                                    <div className='flex items-center justify-center mt-5'>
+                                        <a
+                                            className='flex items-center justify-center bg-[#FECDDC] border h-14 w-14 border-black rounded-full'
+                                            href="#"
+                                        >
+                                            <img
+                                                className='w-[20px]'
+                                                src={RightArrow}
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='bg-[#DAEEFF] rounded-lg group'>
+                                <div className='w-full h-[200px] -mt-[100px] grid grid-cols-1 gap-5'>
+                                    <img
+                                        src={CandyCombo}
+                                        className='w-full h-[200px] object-contain transition-all duration-500 ease-in-out group-hover:scale-75'
+                                    />
+                                </div>
+                                <div className='px-10 pb-10 pt-5'>
+                                    <h1 className='text-3xl font-bold text-center'>Candy</h1>
+                                    <div className='flex items-center justify-center mb-5'>
+                                        <div className='w-[40px] h-[60px]'>
+                                            <img src={CandyIco} className='w-full h-full object-contain' />
+                                        </div>
+                                    </div>
+                                    <p className='mb-5 text-center'>"Sweet, chewy, and bursting with flavor, our ice cream candies are a real delight."</p>
                                     <div className='flex items-center justify-center mt-5'>
                                         <a
                                             className='flex items-center justify-center bg-[#FECDDC] border h-14 w-14 border-black rounded-full'
