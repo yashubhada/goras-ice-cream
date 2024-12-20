@@ -1,12 +1,11 @@
 import React from 'react'
+import LandingPage from './components/LandingPage'
 
 const App: React.FC = () => {
     return (
-        <>
-            <h1 className="text-3xl font-bold underline text-red-500">
-                Hello world!
-            </h1>
-        </>
+        <div className='font-grandstander'>
+            <LandingPage />
+        </div>
     )
 }
 
