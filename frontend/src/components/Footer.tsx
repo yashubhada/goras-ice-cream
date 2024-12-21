@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-full bg-black py-5 px-3 text-white text-center'>
+            <div className='text-sm md:text-base w-full bg-black py-5 px-3 text-white text-center'>
                 &copy; {currentYear}, All rights reserved, <span className='text-[#F3CB60]'>shree goras ice cream</span>, Developed by <span className='text-[#F3CB60]'>yash ubhada</span>
             </div>
         </footer>

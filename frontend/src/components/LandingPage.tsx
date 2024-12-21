@@ -23,6 +23,7 @@ import FlavorsCombo from '../images/flavors-combo.png'
 import FloatIce2 from '../images/floatIcon2.png'
 import FlavorDownBanner from '../images/flavor-down-banner.svg'
 import Footer from './Footer'
+import Navbar from './Navbar'
 
 const LandingPage: React.FC = () => {
 
@@ -46,14 +47,16 @@ const LandingPage: React.FC = () => {
 
     return (
         <>
-
             {/* hero section */}
 
             <section
                 style={{ backgroundImage: `url(${HeroImg})` }}
                 className='bg-cover bg-center'
             >
-                <div className="px-3 lg:px-20 2xl:px-40 py-10 md:py-16">
+                <div className='md:pt-10 md:pb-5'>
+                    <Navbar />
+                </div>
+                <div className="px-3 lg:px-20 2xl:px-40 pb-10 md:py-16">
                     <div className='relative grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center md:flex-row'>
                         <div className='h-[300px] md:h-[400px] mb-10 md:mb-0 md:order-2'>
                             <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
