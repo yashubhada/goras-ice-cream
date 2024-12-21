@@ -19,6 +19,10 @@ import CandyCombo from '../images/candyCombo.png'
 import CupCombo from '../images/cupCombo.png'
 import ConeCombo from '../images/coneCombo.png'
 import RightArrow from '../images/rightArrow.png'
+import FlavorsCombo from '../images/flavors-combo.png'
+import FloatIce2 from '../images/floatIcon2.png'
+import FlavorDownBanner from '../images/flavor-down-banner.svg'
+import Footer from './Footer'
 
 const LandingPage: React.FC = () => {
 
@@ -49,7 +53,7 @@ const LandingPage: React.FC = () => {
                 style={{ backgroundImage: `url(${HeroImg})` }}
                 className='bg-cover bg-center'
             >
-                <div className="px-3 md:px-40 py-10 md:py-16">
+                <div className="px-3 lg:px-20 2xl:px-40 py-10 md:py-16">
                     <div className='relative grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center md:flex-row'>
                         <div className='h-[300px] md:h-[400px] mb-10 md:mb-0 md:order-2'>
                             <div className="w-full h-full flex items-center justify-center overflow-hidden relative">
@@ -94,7 +98,7 @@ const LandingPage: React.FC = () => {
 
             {/* About */}
             <section className='bg-[#DAEEFF]'>
-                <div className="px-3 md:px-40">
+                <div className="px-3 lg:px-20 2xl:px-40">
                     <div className='relative py-10 md:py-16'>
                         <h1 className='text-center text-3xl md:text-5xl font-bold'>We Care About You!</h1>
                         <div className='absolute top-10 md:top-0 -left-8 md:left-0 z-10'>
@@ -137,7 +141,7 @@ const LandingPage: React.FC = () => {
             {/* product categories */}
 
             <section className='bg-[#FECDDC]'>
-                <div className="px-3 md:px-40">
+                <div className="px-3 lg:px-20 2xl:px-40">
                     <div className='relative py-10 md:py-16'>
                         <h1 className='mb-32 text-center text-3xl md:text-5xl font-bold' style={{ textShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)' }}>Our Product Categories</h1>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-36 md:gap-10'>
@@ -229,6 +233,51 @@ const LandingPage: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+
+            {/* Flavors */}
+            <section className='bg-[#DAEEFF]'>
+                <div className="px-3 lg:px-20 2xl:px-40">
+                    <div className='relative pt-10 md:pt-16 pb-5 md:pb-0'>
+                        <div className='grid grid-cols-1 gap-10 md:grid-cols-2 items-center'>
+                            <div className='w-full h-[300px] md:h-[500px] flex items-cente justify-center'>
+                                <img
+                                    src={FlavorsCombo}
+                                    draggable={false}
+                                    className='w-full h-full object-contain select-none'
+                                />
+                            </div>
+                            <div>
+                                <h1 className='mb-10 text-center md:text-left text-3xl md:text-5xl font-bold' style={{ textShadow: '4px 4px 8px rgba(0, 0, 0, 0.3)' }}>Heavenly Flavors</h1>
+                                <p className='mb-5 text-justify'>At Shree Goras Ice Cream, we bring you a symphony of irresistible flavors crafted to delight every taste bud. From fruity favorites like refreshing Orange, tangy Katchi Keri, and zesty Kala Khatta, to rich indulgences like Chocolate, Kesar, and creamy Malai, our variety caters to all cravings.</p>
+                                <p className='text-justify'>Savor the exotic charm of Pista, Special Goras, and Anjir, or treat yourself to the nutty goodness of Kaju, Almond, and Butter Scotch. For those with a sweet tooth, indulge in Butter Caramel, classic Vanilla, luscious Mango, or the vibrant Strawberry. With every scoop, we promise an unforgettable taste journey full of joy and sweetness.</p>
+                                <a
+                                    href="#"
+                                    className='mt-5 block w-fit bg-[#F3CB60] hover:bg-white text-black border border-black text-base px-6 py-3 rounded-full transition-all duration-300 ease-in-out'
+                                >
+                                    Try Now
+                                </a>
+                            </div>
+                        </div>
+                        <div className='absolute -top-[11px] right-5 w-[50px] md:w-[50px]'>
+                            <img
+                                src={FloatIce2}
+                                draggable={false}
+                                className='w-full -rotate-90 select-none'
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='bg-[#FECDDC] relative h-[80px] md:h-[300px]'>
+                <div className='absolute top-0 left-0 w-full'>
+                    <img src={FlavorDownBanner} draggable={false} className='w-full select-none' />
+                </div>
+            </section>
+
+            {/* footer */}
+            <Footer />
 
         </>
     )
